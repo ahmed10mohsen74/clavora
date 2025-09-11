@@ -19,7 +19,7 @@ const Nav = () => {
               <PiEyedropperSampleFill size={30} />
               <h2 className="text-2xl ">logo</h2>
               <h2 className="text-2xl ">logo</h2>
-              <h2 className="text-2xl ">logo</h2>
+              <h2 className="text-2xl ">logo 3</h2>
             </div>
 
             {/*links in large scr een */}
