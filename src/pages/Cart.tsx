@@ -20,7 +20,12 @@ const Cart = () => {
       ) : (
         <div className="space-y-4">
           {cartItems.map((item, index) => (
-            <div key={index} className="flex justify-between items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <div key={index} className="flex gap-4 items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <img 
+                src={item.image} 
+                alt={item.name} 
+                className="w-24 h-24 object-cover rounded-lg"
+              />
               <div className="flex-1">
                 <h3 className="text-xl font-semibold text-gray-800">{item.name}</h3>
                 <p className="text-blue-600 font-bold text-lg mt-1">${(item.price * item.quantity).toFixed(2)}</p>

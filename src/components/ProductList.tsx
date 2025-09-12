@@ -7,6 +7,7 @@ interface Product {
   price: number;
   category: string;
   description: string;
+  image: string;
 }
 
 interface ProductListProps {
@@ -28,7 +29,11 @@ export const ProductList = ({ products, selectedCategory, searchQuery }: Product
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {products.map((product) => (
             <div key={product.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all">
-              <div className="h-40 md:h-48 bg-gray-200"></div>
+              <img 
+                src={product.image} 
+                alt={product.name}
+                className="w-full h-40 md:h-48 object-cover hover:scale-105 transition-transform duration-300"
+              />
               <div className="p-4 md:p-6">
                 <h3 className="text-lg md:text-xl font-semibold mb-2">{product.name}</h3>
                 <p className="text-sm md:text-base text-gray-600 mb-4">{product.description}</p>
@@ -42,7 +47,8 @@ export const ProductList = ({ products, selectedCategory, searchQuery }: Product
                         id: product.id, 
                         name: product.name, 
                         price: product.price,
-                        quantity: 1
+                        quantity: 1,
+                        image: product.image
                       });
                     }}
                     className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
