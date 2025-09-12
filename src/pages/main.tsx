@@ -12,12 +12,75 @@ interface Product {
   category: string;
   description: string;
   image: string;
+  images?: string[];
+  features?: string[];
+  specs?: Record<string, string>;
+  rating?: number;
+  reviews?: number;
 }
 
 const products: Product[] = [
   // Electronics
-  { id: 1, name: "Smartphone", price: 599.99, category: "Electronics", description: "Latest smartphone with amazing features and 5G connectivity", image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&q=80" },
-  { id: 2, name: "Laptop", price: 999.99, category: "Electronics", description: "Powerful laptop with 16GB RAM and SSD", image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80" },
+  { 
+    id: 1, 
+    name: "Smartphone", 
+    price: 599.99, 
+    category: "Electronics", 
+    description: "Experience the future of mobile technology with our latest 5G smartphone. Featuring a stunning display, powerful camera system, and all-day battery life.",
+    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&q=80",
+      "https://images.unsplash.com/photo-1592434765768-205451c1e873?w=500&q=80",
+      "https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=500&q=80",
+      "https://images.unsplash.com/photo-1546054454-aa26e2b734c7?w=500&q=80"
+    ],
+    features: [
+      "5G Connectivity",
+      "48MP Triple Camera System",
+      "6.5-inch AMOLED Display",
+      "5000mAh Battery",
+      "Fast Charging Support"
+    ],
+    specs: {
+      "Screen Size": "6.5 inches",
+      "RAM": "8GB",
+      "Storage": "128GB",
+      "Battery": "5000mAh",
+      "OS": "Android 13"
+    },
+    rating: 4.5,
+    reviews: 128
+  },
+  { 
+    id: 2, 
+    name: "Laptop", 
+    price: 999.99, 
+    category: "Electronics", 
+    description: "Professional-grade laptop perfect for work and entertainment. Features a high-resolution display, powerful processor, and all-day battery life.", 
+    image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80",
+      "https://images.unsplash.com/photo-1504707748692-419802cf939d?w=500&q=80",
+      "https://images.unsplash.com/photo-1516387938699-a93567ec168e?w=500&q=80",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&q=80"
+    ],
+    features: [
+      "Intel Core i7 Processor",
+      "16GB DDR4 RAM",
+      "512GB NVMe SSD",
+      "15.6-inch 4K Display",
+      "Backlit Keyboard"
+    ],
+    specs: {
+      "Processor": "Intel Core i7",
+      "RAM": "16GB",
+      "Storage": "512GB SSD",
+      "Display": "15.6-inch 4K",
+      "Battery Life": "Up to 10 hours"
+    },
+    rating: 4.8,
+    reviews: 256
+  },
   { id: 3, name: "Wireless Earbuds", price: 129.99, category: "Electronics", description: "Premium wireless earbuds with noise cancellation", image: "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500&q=80" },
   { id: 4, name: "Smart Watch", price: 199.99, category: "Electronics", description: "Fitness tracking and notifications on your wrist", image: "https://images.unsplash.com/photo-1544117519-31a4b719223d?w=500&q=80" },
 
