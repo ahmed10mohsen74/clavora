@@ -1,8 +1,8 @@
-import { PiEyedropperSampleFill } from "react-icons/pi";
 import { IoIosMenu } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { MdOutlineClose } from "react-icons/md";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaStore } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 
 import { useState } from "react";
@@ -17,13 +17,12 @@ const Nav = () => {
       <div className="w-full shadow-md fixed top-0 left-0 z-10 bg-white py-4">
         <div className="container m-auto px-4 py-2 flex justify-between items-center ">
           <div className="flex justify-between items-center w-full">
-            <div className="flex gap-2 items-center">
-              <PiEyedropperSampleFill size={30} color="gray" />
-              <h2 className="text-2xl ">logo</h2>
-              
-            </div>
+            <Link to="/" className="flex gap-2 items-center hover:opacity-80 transition-opacity">
+              <FaStore size={30} className="text-blue-600" />
+              <h2 className="text-2xl font-semibold">ShopNow</h2>
+            </Link>
 
-            {/*links in large scr een */}
+            {/*links in large screen */}
             <div className="hidden md:flex gap-9 text-2xl">
               <Link to="/" className="hover:text-blue-500 duration-500">Home</Link>
               <Link to="/about" className="hover:text-blue-500 duration-500">About</Link>
@@ -31,9 +30,18 @@ const Nav = () => {
               <Link to="/contact" className="hover:text-blue-500 duration-500">Contact</Link>
             </div>
             <div className="flex gap-3 items-center">
-                <Link to="/cart">
-                  <FaShoppingCart size={25} className="cursor-pointer" />
-                  <span className="font-semibold">{cartItems.length}</span>
+                <Link to="/cart" className="relative">
+                  <motion.div whileTap={{ scale: 0.9 }}>
+                    <FaShoppingCart size={25} className="cursor-pointer" />
+                    <motion.span
+                      key={cartItems.length}
+                      initial={{ scale: 0.5, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      className="absolute -top-2 -right-2 bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold"
+                    >
+                      {cartItems.length}
+                    </motion.span>
+                  </motion.div>
                 </Link>
             </div>
             {/*  icon for mobile */}
